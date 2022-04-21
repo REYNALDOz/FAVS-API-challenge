@@ -1,0 +1,39 @@
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      summary: lits of users.
+      responses:
+        200:
+          description: return list of the users
+        401:
+          description: unauthorized invalid token or not token provided
+        403:
+          description: bad request 
+
+  /users/{id}:
+    put:
+      tags:
+        - Users
+      summary: Returns a list of user modified.
+      description: Here modifed some users (Actualization)
+      responses:
+        200:
+          description: return users update
+        401:
+          description: unauthorized invalid token or not token provided
+        403:
+          description: bad request 
+    delete:
+      tags:
+        - Users
+      summary: Delete user.
+      description: Return sms successful
+      responses:
+        200:
+          description: return sms successful
+        401:
+          description: unauthorized invalid token or not token provided
+        403:
+          description: bad request
