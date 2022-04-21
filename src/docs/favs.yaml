@@ -1,0 +1,63 @@
+paths:
+  /favs:
+    post:
+      tags:
+        - Favs
+      summary: Create favs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                link:
+                  type: string
+      responses:
+        200:
+          description: return the favs created
+        401:
+          description: unauthorized invalid token or not token provided
+        403:
+          description: bad request 
+    get:
+      tags:
+        - Favs
+      summary: lits of favorites.
+      responses:
+        200:
+          description: return the list favorites
+        401:
+          description: unauthorized invalid token or not token provided
+        403:
+          description: bad request
+
+  /favs/{id}:
+    put:
+      tags:
+        - Favs
+      summary: Returns a list of favorite modified.
+      description: Here modifed some favorites (Actualization)
+      responses:
+        200:
+          description: return favorite update
+        401:
+          description: unauthorized invalid token or not token provided
+        403:
+          description: bad request 
+    delete:
+      tags:
+        - Favs
+      summary: Delete favorites.
+      description: Return sms successful
+      responses:
+        200:
+          description: return sms successful
+        401:
+          description: unauthorized invalid token or not token provided
+        403:
+          description: bad request

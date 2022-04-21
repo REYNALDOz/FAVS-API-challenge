@@ -1,0 +1,54 @@
+paths:
+  /api/local/signup:
+    post:
+      tags:
+        - signup
+      summary: Create a user
+      description: This a endpoint is to create the use.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                passwordConfirmation:
+                  type: string
+      responses:
+        200:
+          description: new user created
+        400:
+          description: Duplicate email
+        403:
+          description: bad request wrong email or password
+
+  /api/local/login:
+    post:
+      tags:
+        - login
+      summary: Login user, return token.
+      description: In this endpoint, if the credebtial are correct retun a token.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        200:
+          description: Return token, 
+        403:
+          description: password or email required
+        500:
+          description: bad request wrong email or password
