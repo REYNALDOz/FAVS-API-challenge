@@ -6,7 +6,10 @@ export const createAuthToken = (payload: {}): string => {
   });
 };
 
+
 export const validateToken = (token: string) => {
+  token=token.split(' ')[1]
+  console.log(token)
   return <jwt.UserIDJwtPayload>(
     jwt.verify(token, `${process.env.JWT_AUTH_SECRET}`)
   );

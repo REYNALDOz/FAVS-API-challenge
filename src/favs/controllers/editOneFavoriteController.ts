@@ -24,7 +24,7 @@ export const editOneFavorite = async (
       link,
     });
 
-    res.status(200).json({ data: favorit });
+    res.status(200).json({ msg: 'updated'});
   } catch (error: any) {
     logger.error("Error editing the project projects", {
       instance: "controllers",

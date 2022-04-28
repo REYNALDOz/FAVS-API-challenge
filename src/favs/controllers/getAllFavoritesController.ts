@@ -16,7 +16,7 @@ export const getAllFavorites = async (
     const tasks = await getAllFavoritesService({
       owner: user.id,
     });
-    res.status(200).json({ data: tasks });
+    res.status(200).json({ user,tasks });
   } catch (error: any) {
     logger.error("Error on get all projects controller", {
       instance: "controllers",

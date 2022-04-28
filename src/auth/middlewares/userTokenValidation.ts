@@ -7,7 +7,12 @@ export const userTokenValidation = (
   next: NextFunction
 ) => {
   try {
+    
     const { authorization } = req.headers;
+
+    console.log(authorization)
+
+
     if (!authorization)
       return next(new ApplicationError(401, "No token provided"));
 
