@@ -11,9 +11,6 @@ export const deleteOneFavoriteService = async (
     const exists = await findOneResourceByField(FavoriteModel)({
       owner: userId,
     });
-    console.log(FavoriteId)
-    console.log(userId)
-    console.log(`exiteeeeeeeeeeeeeeeeeeeeeeeeeeeee ${exists}`)
     
     if (!exists) throw new Error("the user cannot delete this proyect");
 

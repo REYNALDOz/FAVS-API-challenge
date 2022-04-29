@@ -13,10 +13,13 @@ export const getAllFavorites = async (
   try {
     const user = await getOneUserByIdService(req.userId);
     if (!user) throw new ApplicationError(401, `invalid user id`);
-    const tasks = await getAllFavoritesService({
+    const favs = await getAllFavoritesService({
       owner: user.id,
     });
-    res.status(200).json({ user,tasks });
+
+    const {name,email}=user;
+    
+    res.status(200).json({ name,email,favs });
   } catch (error: any) {
     logger.error("Error on get all projects controller", {
       instance: "controllers",

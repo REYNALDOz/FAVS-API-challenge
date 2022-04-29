@@ -1,6 +1,7 @@
 import { Schema } from "mongoose";
+import { array } from "yup";
 import { User } from "../types/User";
-import { FavoriteModel } from "../../../favs/entity/models/favoriteModel";
+
 
 export const UserSchema = new Schema<User>({
   name: {
